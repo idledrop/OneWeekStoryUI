@@ -1,0 +1,22 @@
+<h1>Sign Up/Sign In</h1>
+<form *ngIf="user" (ngSubmit)="handleUser()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input id="username" class="form-control" type="text" [(ngModel)]="user.username">  
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email *</label>
+    <input id="email" [ngFormControl]="userEmailControl" class="form-control" type="email" [(ngModel)]="user.email" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password *</label>
+    <input id="shownPassword" class="form-control" *ngIf="showPassword" type="text" [(ngModel)]="user.password" pPassword>
+    <input id="password" class="form-control" *ngIf="!showPassword" type="password" [(ngModel)]="user.password" pPassword required>
+  </div>  
+  <label>Show Password <input type="checkbox" [(ngModel)]="showPassword"></label>
+  
+  <button class="btn btn-primary pull-right" type="submit">Submit</button>
+</form>
+<busy-modal [header]="header" [visible]="saving"></busy-modal>

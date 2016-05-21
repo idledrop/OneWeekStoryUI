@@ -1,0 +1,20 @@
+.panel-heading{
+  font-size:1.3em;
+  font-weight:bold;
+}
+
+.panel-footer{
+  overflow:hidden;
+}
+
+.list-group-item{
+  overflow:hidden;
+}
+
+.list-group-item p, .control-label{
+  padding-top:5px;
+}
+
+.control-label{
+  text-align:right;
+}

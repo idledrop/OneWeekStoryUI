@@ -1,0 +1,11 @@
+<div *ngIf="story">
+  <h2>You have been invited to {{story.title}}</h2>
+  
+  <h3>Description</h3>
+  <p>{{story.description}}</p>
+
+  <h3>Would you like to accept?</h3>
+  <button class="btn btn-danger" (click)="declineInvite()">Politely Decline</button>
+  <button class="btn btn-primary" (click)="acceptInvite()">Accept</button>
+</div>
+<busy-modal-component [header]="header" [visible]="visible"></busy-modal-component>

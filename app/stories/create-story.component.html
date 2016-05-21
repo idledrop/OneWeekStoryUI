@@ -1,0 +1,26 @@
+<h2>Create Story</h2>
+<form (ngSubmit)="createStory()">
+  <user-form *ngIf="showUserForm" [user]="user"></user-form>
+  <invite-list [invites]="invites"></invite-list>
+  <fieldset *ngIf="story">
+    <legend>Story Info</legend>
+    
+    <div class="form-group">
+      <label for="storyTitle">Title *</label>
+      <input class="form-control" type="text" [(ngModel)]="story.title" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="storyDescription">Description *</label>
+      <textarea class="form-control" rows="5" [(ngModel)]="story.description" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="firstPost">First Post *</label>
+      <textarea class="form-control" id="firstPost" rows="5" [(ngModel)]="post.content" required></textarea>
+    </div>
+  </fieldset>
+  
+  <button class="btn btn-primary pull-right" type="submit">Submit</button>
+</form>
+<busy-modal header="Saving" [visible]="saving"></busy-modal>

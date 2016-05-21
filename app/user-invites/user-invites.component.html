@@ -1,0 +1,14 @@
+<h2>Invites</h2>
+<ul *ngIf="!loadingInvites && stories.length > 0"class="list-group">
+  <li class="list-group-item" *ngFor="let story of stories">
+    <div class="col-sm-2">{{story.title}}</div>
+    <div class="col-sm-8">{{story.description || 'No Description'}}</div>
+    <div class="col-sm-1"><button class="btn btn-danger" (click)="declineInvite(story.id)">Decline</button></div>
+    <div class="col-sm-1"><button class="btn btn-primary" (click)="acceptInvite(story.id)">Accept</button></div>
+  </li>
+</ul>
+<p *ngIf="loadingInvites" class="alert alert-info">
+  <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Loading Invites...
+</p>
+<p class="alert alert-info" *ngIf="!loadingInvites && stories.length === 0">No Invites Found</p>
+<busy-modal-component [header]="header" [visible]="visible"></busy-modal-component>

@@ -1,0 +1,10 @@
+<h2>Stories</h2>
+<form>
+  <input class="form-control" type="text" [ngFormControl]="titleControl" [(ngModel)]="title">  
+</form>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let story of stories" (click)="gotoStory(story.id)">
+    <div class="col-sm-3">{{story.title}}</div>
+    <div class="col-sm-9">{{story.description || 'No Description'}}</div>
+  </li>
+</ul>
