@@ -2,3 +2,5 @@
 /typings
 /.vscode
 bundle.js
+/app/**.map.js
+/app/**.js
